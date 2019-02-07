@@ -1,5 +1,5 @@
 #include <stdio.h>
 
-void sub(int a, int b){
-  puts(a-b);
+int sub(int a, int b){
+  return (a-b);
 }

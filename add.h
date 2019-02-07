@@ -1,1 +1,1 @@
-void add(int, int);
+int add(int, int);

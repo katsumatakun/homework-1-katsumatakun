@@ -1,5 +1,5 @@
 #include<stdio.h>
 
-void add(int a, int b){
-  printf(a+b);
+int add(int a, int b){
+  return (a+b);
 }

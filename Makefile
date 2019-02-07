@@ -4,7 +4,7 @@ all: calc
 calc: calc.o add.o sub.o add.h sub.h
 	gcc -o calc calc.o add.o sub.o
 
-main.o: calc.c add.h sub.h
+calc.o: calc.c add.h sub.h
 	gcc -c calc.c
 
 add.o: add.c
