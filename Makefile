@@ -1,11 +1,11 @@
 .PHONY: all
-all: main
+all: calc
 
-main: main.o add.o sub.o add.h sub.h
-	gcc -o main main.o add.o sub.o
+calc: calc.o add.o sub.o add.h sub.h
+	gcc -o calc calc.o add.o sub.o
 
-main.o: main.c add.h sub.h
-	gcc -c main.c
+main.o: calc.c add.h sub.h
+	gcc -c calc.c
 
 add.o: add.c
 		gcc -c add.c
@@ -15,4 +15,4 @@ sub.o: sub.c
 
 .PHONY: clean
 clean:
-	rm -rf main main.o
+	rm -rf calc *.o
