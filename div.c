@@ -1,24 +1,22 @@
 #include<stdio.h>
 
-int Gcd(int, int);
+int quot(int a, int b){
+  return a/b;
+}
 
-void divi(int a, int b, int* ary){
-
-  int temp = a;
-  int quotient = 0;
-  while (temp >= b)
-  {
-     temp = temp - b;
-     quotient++;
-  }
-  int g = Gcd(temp, b);
-  ary[0] = quotient;
-  ary[1] = temp/g;
-  ary[2] = b/g;
-
+int remain(int a, int b){
+  return a%b;
 }
 
 int Gcd(int x, int y){
+      if (x < 0)
+      {
+        x = x *-1;
+      }
+      if (y < 0)
+      {
+        y = y *-1;
+      }
       int temp = x % y;
       while (temp > 0) {  // INV (prior to test):
           //    No integer > b evenly divides
