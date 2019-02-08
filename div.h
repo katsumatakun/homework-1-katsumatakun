@@ -1,2 +1,3 @@
-void divi(int, int, int*);
-int gcd(int, int);
+int quot(int, int);
+int remain(int, int);
+int Gcd(int, int);

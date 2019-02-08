@@ -7,17 +7,31 @@
 
 void main(int argc, char *argv[]) {
 
-  int sum = add( atoi(argv[1]), atoi(argv[2]));
-  int dif = sub( atoi(argv[1]), atoi(argv[2]));
-  int pro = mul( atoi(argv[1]), atoi(argv[2]));
-  printf("%d\n", sum);
-  printf("%d\n", dif);
-  printf("%d\n", pro);
-  if (atoi(argv[2]) != 0)
+  int arg1 = strtol( argv[1], NULL, 10);
+  int arg2 = strtol( argv[2], NULL, 10);
+  int sum = add( arg1, arg2);
+  int dif = sub( arg1, arg2);
+  int pro = mul( arg1, arg2);
+
+  printf("%d + %d = %d\n", arg1, arg2, sum);
+  printf("%d - %d = %d\n", arg1, arg2, dif);
+  printf("%d * %d = %d\n", arg1, arg2, pro);
+  if (arg2 != 0)
   {
-  int array_for_division[3];
-  divi(atoi(argv[1]), atoi(argv[2]), array_for_division);
-  printf("%d + %d/%d\n", array_for_division[0], array_for_division[1], array_for_division[2]);
+    if (arg1 < 0 && arg2 < 0)
+    {
+      arg1 = arg1*-1;
+      arg2 = arg2*-1;
+    }
+    int quo = quot( arg1, arg2);
+    int rem = remain( arg1, arg2);
+    int gcd = Gcd( rem, arg2);
+    if (rem == 0)
+    {
+      printf("%d / %d = %d\n", arg1, arg2, quo);
+    }
+    else
+      printf("%d / %d = %d + %d/%d\n", arg1, arg2, quo, rem/gcd, arg2/gcd);
   }
   else{
     printf("You cannot divide by 0\n");
