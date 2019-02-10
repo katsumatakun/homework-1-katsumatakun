@@ -54,15 +54,16 @@ int main(int argc, char *argv[]) {
       arg1 = arg1*-1;
       arg2 = arg2*-1;
     }
-    int quo = quot( arg1, arg2);
-    int rem = remain( arg1, arg2);
-    int gcd = Gcd( rem, arg2);
+    int quo = quot( arg1, arg2);  //quotient
+    int rem = remain( arg1, arg2); //remainder
+    int gcd = Gcd( rem, arg2);  //greatest common divisor
 
     //if remainder is zero, display only quotient
     if (rem == 0)
     {
       printf("%d / %d = %d\n", arg1, arg2, quo);
     }
+    
     else
       printf("%d / %d = %d + %d/%d\n", arg1, arg2, quo, rem/gcd, arg2/gcd);
   }
