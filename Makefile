@@ -1,10 +1,13 @@
+OBJS = add.o sub.o mul.o div.o
+OBJS2 = add.h sub.h mul.h div.h
+
 .PHONY: all
 all: calc
 
-calc: calc.o add.o sub.o mul.o div.o add.h sub.h mul.h div.h
+calc: calc.o $(OBJS) $(OBJS2)
 	gcc -o calc calc.o add.o sub.o mul.o div.o
 
-calc.o: calc.c add.h sub.h mul.h div.h
+calc.o: calc.c $(OBJS2)
 	gcc -c calc.c
 
 add.o: add.c
