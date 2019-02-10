@@ -8,8 +8,18 @@
 
 //Accept two integer input from a command line, output sum, difference (first input - second input),
 //product, divison (first input - second input)
-void main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
 
+  if (argc == 1)
+  {
+    printf("This takes two integers (./calc arg1 arg2) and outputs the sum, the differece, the product, and the divison\n" );
+    printf("Input example: ./calc 10 3 \n");
+    printf("Division will be displayed as quotient + fractional remiander \n");
+    printf("Output example for division: 10/3 = 3 + 1/3\n");
+    printf("You cannot type 0 for arg2 since you cannot divide by 0\n");
+
+    return 0;
+  }
   //change type from char to int
   int arg1 = strtol( argv[1], NULL, 10);
   int arg2 = strtol( argv[2], NULL, 10);
@@ -49,4 +59,5 @@ void main(int argc, char *argv[]) {
   else{
     printf("You cannot divide by 0\n");
   }
+  return 0;
 }
