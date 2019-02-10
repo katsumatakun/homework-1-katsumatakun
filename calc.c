@@ -10,16 +10,28 @@
 //product, divison (first input - second input)
 int main(int argc, char *argv[]) {
 
+  //If just ./calc is input, these will be displayed as help, and the function excecuton finishes.
   if (argc == 1)
   {
     printf("This takes two integers (./calc arg1 arg2) and outputs the sum, the differece, the product, and the divison\n" );
-    printf("Input example: ./calc 10 3 \n");
-    printf("Division will be displayed as quotient + fractional remiander \n");
-    printf("Output example for division: 10/3 = 3 + 1/3\n");
-    printf("You cannot type 0 for arg2 since you cannot divide by 0\n");
+    printf("\nInput example: ./calc 10 3 \n");
+    printf("\nDivision will be displayed as quotient + fractional remiander \n");
+    printf("\nOutput example for division: 10/3 = 3 + 1/3\n");
+    printf("\nYou cannot type 0 for arg2 since you cannot divide by 0\n");
+    printf("\nIf there are more than two input for integers, first two inputs are considered and from the third input will be ignored\n");
+    printf("\nIf characters or strings are input, these will be considered as integer 0\n");
 
     return 0;
   }
+
+  //If there is one integer input, then it will be displayed , and the function excecuton finishes..
+  if (argc == 2)
+  {
+    printf("You need two integers as input values\n");
+
+    return 0;
+  }
+
   //change type from char to int
   int arg1 = strtol( argv[1], NULL, 10);
   int arg2 = strtol( argv[2], NULL, 10);
