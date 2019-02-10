@@ -1,13 +1,17 @@
-#include<stdio.h>
 
+
+
+//Accept two integers and return the quotient of (first input / second input)
 int quot(int a, int b){
   return a/b;
 }
 
+//Accept two integers and return the reminder of (first input / second input)
 int remain(int a, int b){
   return a%b;
 }
 
+//Accept two integers and return the greatest common divisor.
 int Gcd(int x, int y){
       if (x < 0)
       {
