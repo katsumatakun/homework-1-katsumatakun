@@ -1,5 +1,5 @@
 
-
+#include "div.h"
 
 //Accept two integers and return the quotient of (first input / second input)
 int quot(int a, int b){
